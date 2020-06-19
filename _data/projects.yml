@@ -1,0 +1,50 @@
+- name: Friday
+  code: https://github.com/pwamsley2015/public_friday
+  about: My personal assistant chatbot who automates tasks, logs data, manages my schedule, and keeps me hacking. Dynamic IO over the web and local intranet.
+  roles: 
+    - Everything
+  built_with: 
+    - Twilio Messaging API
+    - Java
+    - Python
+    - Spark
+    - JavaFx
+- name: Congressional Redistricting 
+  code: https://github.com/pwamsley2015/congressional_redistricting
+  about: Web application which generates congressional redistricting lines, built to maximize the number of majority-miniority distrcts.
+  roles:
+    - Primary Backend Developer
+    - Designed and implemented AlgorithmStep framework to modularize Algorithm
+    - Implemented Graph Partioning Algorithm to generate majority-miniority distrcts
+  built_with:
+    - React
+    - TypeScript
+    - Java
+    - Hibernate
+- name: MedCluster
+  code: https://github.com/pwamsley2015/medcluster
+  about: Machine Learning and Data Visualization tool used to optimize EMT base station locations. 
+  roles: 
+    - Primary Backend Developer
+    - Implemented k-means clustering Algorithm
+  built_with:
+    - Python
+    - Google Maps API
+    - JavaScript
+- name: No Limit Hold'Em Equity Calculator
+  code: https://github.com/pwamsley2015/NLHE_lab
+  about: Calculates Range vs Range Equity in Poker. 
+  roles: 
+    - Everything
+  built_with:
+    - Java
+    - JUnit
+    - Monti-Carlo Estimation
+- name: FRC 2485 Robotics
+  code: https://github.com/team2485/frc-2016
+  about: Autonomous and Teleoperated Robot Control for FRC Recycle Rush
+  roles:
+    - Lead Developer
+  built_with:
+    - Java
+    - WPI FRC Framework

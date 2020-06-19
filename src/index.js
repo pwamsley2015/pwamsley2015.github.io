@@ -6,6 +6,8 @@ import RoundedImage from "react-rounded-image";
 import SidebarImage from './images/logo192.png';
 import {Container, Row, Col} from 'react-bootstrap';
 
+const INTRO = "Welcome!"
+
 class ProjectPage extends React.Component {
   render() {
     return ( 
@@ -60,7 +62,7 @@ class SideBar extends React.Component {
 
               <Row>B.S. Computer Science</Row>
           
-            <Row>Welcome! kjhdsfkljahdsfkljahsdlfkjahsdfkljahsdfkljahdsfkljahdflkajsdfhalksdfhjalkdjfhalksdfhjalskdfjha </Row>
+            <Row>{INTRO}</Row>
 
             <div> <b>Links</b> <br/> </div>
           </Col>
