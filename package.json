@@ -12,6 +12,7 @@
     "react-rounded-image": "^2.0.2",
     "react-scripts": "3.4.1",
     "react-sidebar": "^3.0.2",
+    "react-tagcloud": "^2.0.0",
     "yaml": "^1.10.0"
   },
   "scripts": {
