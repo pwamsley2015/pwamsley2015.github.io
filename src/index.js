@@ -5,12 +5,15 @@ import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
 import Image from "react-bootstrap/Image";
 import ProjectImg from "react-rounded-image"
-import { TagCloud } from 'react-tagcloud';
 import Badge from 'react-bootstrap/Badge';
-
+import ListGroup from 'react-bootstrap/ListGroup';
+import Navbar from 'react-bootstrap/Navbar';
 import {Container, Row, Col} from 'react-bootstrap';
 import Sidebar from "react-sidebar";
-
+import Nav from 'react-bootstrap/Nav';
+import Figure from 'react-bootstrap/Figure';
+import Slider from 'react-animated-slider';
+import 'react-animated-slider/build/horizontal.css';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -21,7 +24,10 @@ import MedClusterImg from './images/medcluster.png';
 import MajMinImg from './images/majmin.png';
 import PokerImg from './images/poker.jpg';
 import FrcImg from './images/frc.png';
-
+import SbuImg from './images/sbu.png';
+import InstaIcon from './images/insta.png';
+import GithubIcon from './images/github.png';
+import SiteImg from './images/site.png';
 const ABOUT = {
   INTRO: "Welcome! I'm primarly interested in backend development, but always trying to learn new tech. I love coding, math, and lifting heavy weights.",
   BUILT: "This website was made using React.", //arrow to github
@@ -31,36 +37,16 @@ const ABOUT = {
   INSTA: "https://www.instagram.com/patrick_wamsley/",
 };
 
-const LANGS = [
-  {value: "Java", count: 50},
-  {value: "C", count: 25},
-  {value: "Python", count: 15},
-  {value: "SQL", count: 20},
-  {value: "JavaScript", count: 20}
-];
+const LANGS = ["Java", "C", "Python", "SQL", "JavaScript", "C++"];
+const TECH = ["React", "HTML", "Git", "JSON", "Maven", "LaTeX"];
+const TOOLS = ["GitHub", "UML Diagrams", "Eclipse", "IntelliJ IDEA", "Google Sheets", "Excel", "Slack", "Trello", "Notion"]
 
-const TECH = [
-  {value: "React", count: 20},
-  {value: "Git", count: 40},
-  {value: "JSON", count: 23},
-  {value: "Maven", count: 20},
-  {value: "HTML", count: 20},
-  {value: "LaTeX", count: 25},
-];
-
-const TOOLS = [
-  {value: "UML Diagrams", count: 33},
-  {value: "Github", count: 40},
-  {value: "Slack", count: 20},
-  {value: "Eclipse", count: 35},
-  {value: "IntelliJ IDEA", count: 25}
-];
 
 const PROJECTS = [
   { name: "Friday",
     img: FridayImg,
     code: "https://github.com/pwamsley2015/public_friday",
-    about: "My personal assistant chatbot which automates tasks, logs data, manages my schedule, and keeps me hacking. Dynamic IO accomplished over the web and local intranet.",
+    about: "My personal assistant chatbot which automates tasks, logs data, manages my schedule, and keeps me hacking. Dynamic IO over the web and local intranet via texts, shells and GUI widgets.",
     roles: ["Everything"], 
     built_with: ["Twilio Messaging API", "Java", "Python", "Spark", "JavaFX"]
   },
@@ -70,6 +56,14 @@ const PROJECTS = [
     about: "Web application which generates congressional redistricting lines, built to maximize the number of majority-miniority distrcts.",
     roles: ["Primary Backend Developer", "Designed and implemented AlogrithmStep framework to modularize Alogrithm", "Implemented Graph Partioning Algorithm to generate majority-miniority distrcts"],
     built_with: ["Angular", "TypeScript", "Java", "Hibernate"]
+  },
+  {
+    name: "Personal Website",
+    img: SiteImg,
+    code: "https://github.com/pwamsley2015/pwamsley2015.github.io",
+    about: "My personal portfolio website, which you've already seen! Built with react, this was a fun project to catch up on modern front end developement tools. More to come...",
+    roles: ["Everything"],
+    built_with: ["React", "Javascript", "HTML", "CSS"]
   },
   {
     name: "MedCluster",
@@ -97,69 +91,35 @@ const PROJECTS = [
   }
 ];
 
-class ProjectDisplay extends React.Component {
-  //props = project
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const project = this.props.project;
-    let builtWith = [];
-    builtWith.push(<Badge variant="primary">Built with:</Badge>);
-    for (let i = 0; i < project.built_with.length; i++) {
-      builtWith.push(<Badge pill variant="info">{project.built_with[i]}</Badge>);
-    }
-
-    const builtWithTags = [];
-    for (let i = 0; i < project.built_with.length; i++) {
-      builtWithTags.push({value: project.built_with[i], count: Math.floor(Math.random() * 30) + 15});
-    }
-
-    return (
-      <Container style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
-        <Row>
-          <Col>
-            <Card>
-              <Card.Title>
-                <h1 style={{"textAlign":"center"}}>{project.name}</h1>
-              </Card.Title>
-              <Card.Body>
-                <ProjectImg 
-                  image={project.img} 
-                  roundedSize="8"
-                />
-                <Button href={project.code} target="_blank" variant="dark">See the code</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Row style={{"textAlign":"center", "font-size":"19px"}}>{project.about}</Row>
-            <Row>
-              <Col>
-                <Badge style={{"font-size":"25px"}} variant="success" >Built with:</Badge>
-              </Col>
-              <Col>
-                <TagCloud tags={builtWithTags} minSize={12} maxSize={22}/>
-              </Col>
-            </Row>
-          </Col>
-          </Row>
-          </Container>
-    );
-  }
-}
-
 class ProjectPage extends React.Component {
   render() {
-    const items = [];
-    for (var i = 0; i < PROJECTS.length; i++) {
-      items.push(<ProjectDisplay key={i} project={PROJECTS[i]}/>);
-    }
     return (
       <div>
-        <h1>Projects</h1>
-      {items}
+          {PROJECTS.map((project, index) => (
+            <div key={index} >
+              <Container>
+                {/**Title */}
+                <Row>
+                  <Col><h2 style={{'text-align':'center'}}>{project.name}</h2></Col>
+                </Row>
+                <Row>
+                  <Col>
+                    {project.about}
+                  </Col>
+                  <Col><ProjectImg image={project.img}/></Col>
+                  <Col><h5>Built with:</h5> 
+                    <div style={{lineHeight:"50%"}}>
+                      {project.built_with.map((item, index) => (
+                        <p>
+                        {item}
+                        </p>
+                      ))}
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          ))}
       </div>
     );
   }
@@ -167,48 +127,68 @@ class ProjectPage extends React.Component {
 
 class AboutSection extends React.Component {
   render() {
+    const langs = [];
+    for (let i = 0; i < LANGS.length; i++) {
+      langs.push(LANGS[i] + "\n");
+    }
+
+    const tools = [];
+    for (let i = 0; i < TOOLS.length; i++) {
+      tools.push(TOOLS[i] + "\n");
+    }
+
+    const tech = [];
+    for (let i = 0; i < TECH.length; i++) {
+      tech.push(TECH[i] + "\n");
+    }
+
     return (
-      <div className="about_section">
-        <CardDeck>
-          <Card>
-            <Card.Title>
-              Languages
-            </Card.Title>
-            <Card.Body>
-              <TagCloud
-                tags={LANGS}
-              />
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Title>
-              Tech
-            </Card.Title>
-            <Card.Body>
-              <TagCloud
-                tags={TECH}
-              />
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Title>
-              Tools
-            </Card.Title>
-            <Card.Body>
-              <TagCloud
-                tags={TOOLS}
-              />
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Title>BS Computer Science</Card.Title>
-            <Card.Body>Stony Brook University</Card.Body>
-          </Card>
-        </CardDeck>
+      <div className="about_skils" style={{
+        'font-size':'2vmin'
+      }}>
+        <Container>
+          <Row>
+            {/**Langs */}
+            <Col>
+              <Row>
+                <Col><h3>Languages</h3></Col>
+                <Col/>
+                <Col>
+                  {langs}
+                </Col>
+              </Row>
+            </Col>
+            <Col>
+            {/**Tech */}
+              <Row>
+                <Col><h3>Tech</h3></Col>
+                <Col/>
+                <Col>
+                  {tech}
+                </Col>
+              </Row>
+            </Col>
+            {/**Tools */}
+            <Col>
+              <Row>
+                <Col><h3>Tools</h3></Col>
+                <Col/>
+                <Col>
+                  {tools}
+                </Col>
+              </Row>
+            </Col>
+            <Col>
+            {/**Education */}
+              <span style={{'white-space':'nowrap'}}>BS Computer Science</span>
+              <Image src={SbuImg} rounded/>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
+    }
   }
-}
 
 class SideBarContent extends React.Component {
   render() {
@@ -225,21 +205,25 @@ class SideBarContent extends React.Component {
         <h3>{ABOUT.HEADLINE}</h3>
       
         {ABOUT.INTRO}
-      Links
+        <p/>
+        I built this website with React. See the code <a href="https://github.com/pwamsley2015/pwamsley2015.github.io" target="_blank">here</a>.
+        <p/>
+       
+        
+
+        <p/>
+
+        <a  href="https://www.github.com/pwamsley2015"
+            target="_blank">
+              <Image src={GithubIcon} />
+        </a>
+
+        <a  href="https://www.instagram.com/patrick_wamsley/"
+            target="_blank">
+              <Image src={InstaIcon} roundedCircle/>
+        </a>
       </div>
     );
-  }
-}
-
-class Banner extends React.Component {
-  render() {
-    return <div className="banner">
-      <h1 style= {{  
-          "text-align":"center", 
-          "font-size":"80px"
-        }}
-      > Patrick Wamsley </h1>
-    </div>
   }
 }
 
@@ -248,35 +232,52 @@ class HomeScreen extends React.Component {
     return (
       <div className="home_screen" style = {{
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        background: "#303C55",
+        color: "#e6f1ff"
       }}>
-        <Container>
-          <Row>
-            <Col>
-              <Sidebar
-                sidebar={<SideBarContent/>}
-                docked={true}
-                styles={{ sidebar: { 
-                          background: "white",
-                          position: "fixed", 
-                          top: 0,
-                          bottom: 0,
-                          transition: "transform .3s ease-out",
-                          willChange: "transform",
-                          overflowY: "auto",
-                          width: "300px"
-                        }
-                      }}
-              />
-            </Col>
-            <Col xs={8}>
-              <Banner />
-              <AboutSection />
-              <ProjectPage />
-            </Col>
-          </Row>
-        </Container>
+        
+        <Sidebar
+          sidebar={<SideBarContent/>}
+          docked={true}
+          styles={{ sidebar: { 
+                    background: "#e6f1ff",
+                    color: "#303C55",
+                    position: "fixed", 
+                    padding: "10px",
+                    top: "80px",
+                    transition: "transform .3s ease-out",
+                    willChange: "transform",
+                    overflowY: "auto",
+                    width: "300px"
+                  }
+                }}
+        /> 
+        
+
+        <Navbar bg="dark" variant="dark" fixed="top">
+          <Navbar.Brand><h1>Patrick Wamsley</h1></Navbar.Brand>
+          <Nav className="mr-auto">
+            <Nav.Link href="#projects">Projects</Nav.Link>
+            <Nav.Link href="resume.pdf">Resume PDF</Nav.Link>
+          </Nav>
+        </Navbar>
+            
+        
+       <Container>
+         <Row>
+           <Col>
+            <AboutSection/> 
+           </Col>
+         </Row>
+         <Row>
+           <Col>
+            <ProjectPage />
+           </Col>
+         </Row>
+       </Container>
+        
+        
+            
       </div>
     );
   }
