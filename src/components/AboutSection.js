@@ -6,82 +6,85 @@ import Image from "react-bootstrap/Image";
 import SbuImg from "../images/sbu.png";
 import "../index.css";
 
-const LANGS = ["Java", "C", "Python", "SQL", "JavaScript", "C++"];
-const TECH = ["React", "HTML", "Git", "JSON", "Maven", "LaTeX"];
+const LANGS = ["Java", "JavaScript", "C & C++", "Python", "SQL", "HTML & CSS"];
+const FRAMEWORKS = [
+  "Hibernate",
+  "JavaFX",
+  "Spring",
+  "JUnit",
+  "React",
+  "Node",
+  "Maven",
+];
 const TOOLS = [
-  "GitHub",
+  "Git & GitHub",
   "UML Diagrams",
-  "Eclipse",
-  "IntelliJ IDEA",
-  "Google Sheets",
-  "Excel",
-  "Slack",
-  "Trello",
-  "Notion",
+  "Maven",
+  "npm",
+  "Eclipse & IntelliJ IDEA",
+  "Excel & Google Sheets",
+  "Slack & Trello & Notion",
 ];
 
 export default class AboutSection extends React.Component {
   render() {
-    const langs = [];
-    for (let i = 0; i < LANGS.length; i++) {
-      langs.push(LANGS[i] + "\n");
-    }
-
-    const tools = [];
-    for (let i = 0; i < TOOLS.length; i++) {
-      tools.push(TOOLS[i] + "\n");
-    }
-
-    const tech = [];
-    for (let i = 0; i < TECH.length; i++) {
-      tech.push(TECH[i] + "\n");
-    }
-
     return (
-      <div
-        className="about_skils"
-        style={{
-          "font-size": "2vmin",
-        }}
-      >
-        <Container>
+      <div>
+        <Container style={{ margin: "15px" }}>
           <Row>
-            {/**Langs */}
             <Col>
-              <Row>
-                <Col>
-                  <h3>Languages</h3>
-                </Col>
-                <Col />
-                <Col>{langs}</Col>
-              </Row>
+              <h5
+                style={{
+                  textTransform: "uppercase",
+                }}
+              >
+                Languages
+              </h5>
+              <ul>
+                {LANGS.map((lang, index) => (
+                  <li>{lang}</li>
+                ))}
+              </ul>
             </Col>
             <Col>
-              {/**Tech */}
-              <Row>
-                <Col>
-                  <h3>Tech</h3>
-                </Col>
-                <Col />
-                <Col>{tech}</Col>
-              </Row>
-            </Col>
-            {/**Tools */}
-            <Col>
-              <Row>
-                <Col>
-                  <h3>Tools</h3>
-                </Col>
-                <Col />
-                <Col>{tools}</Col>
-              </Row>
+              <h5
+                style={{
+                  textTransform: "uppercase",
+                }}
+              >
+                Frameworks
+              </h5>
+              <ul>
+                {FRAMEWORKS.map((t, index) => (
+                  <li>{t}</li>
+                ))}
+              </ul>
             </Col>
             <Col>
-              {/**Education */}
-              <span style={{ "white-space": "nowrap" }}>
-                BS Computer Science
-              </span>
-              <Image src={SbuImg} rounded />
+              <h5
+                style={{
+                  textTransform: "uppercase",
+                }}
+              >
+                Tools
+              </h5>
+              <ul>
+                {TOOLS.map((tool, index) => (
+                  <li>{tool}</li>
+                ))}
+              </ul>
+            </Col>
+            <Col>
+              <h5
+                style={{
+                  textTransform: "uppercase",
+                }}
+              >
+                Education
+              </h5>
+              <h6>BS, Computer Science</h6>
+              <br />
+              <Image src={SbuImg} />
             </Col>
           </Row>
         </Container>

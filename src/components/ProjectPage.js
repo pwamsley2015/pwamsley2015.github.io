@@ -11,6 +11,7 @@ import PokerImg from "../images/poker.jpg";
 import SiteImg from "../images/site.png";
 import "../index.css";
 
+import Badge from "react-bootstrap/Badge";
 const PROJECTS = [
   {
     name: "Friday",
@@ -83,23 +84,25 @@ export default class ProjectPage extends React.Component {
               padding: "10px 0px",
             }}
           >
-            {/**Title */}
-            {/* <Row>
-                <Col></Col>
-              </Row> */}
-            <a
-              style={{ marginRight: "20px" }}
-              href={project.code}
-              target="_blank"
-            >
+            <div style={{ marginRight: "20px" }}>
               <ProjectImg image={project.img} />
-            </a>
+            </div>
             <div style={{ width: "100%" }}>
               <h2 style={{ "text-align": "center" }}>{project.name}</h2>
               <div>{project.about}</div> <br />
               <div style={{ lineHeight: "50%" }}>
                 <b>Built with: </b>
-                {project.built_with.join(", ")}
+                {project.built_with.map((tag, index) => (
+                  <Badge
+                    variant="secondary"
+                    style={{
+                      margin: "5px",
+                      fontSize: "larger",
+                    }}
+                  >
+                    {tag}
+                  </Badge>
+                ))}
               </div>
             </div>
           </div>
