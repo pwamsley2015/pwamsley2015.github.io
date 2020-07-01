@@ -23,7 +23,44 @@ export const ABOUT = {
   INSTA: "https://www.instagram.com/patrick_wamsley/",
 };
 
+const SIDEBAR_WIDTH = 400;
+const mql = window.matchMedia("(min-width: " + SIDEBAR_WIDTH * 3 + "px)");
 class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sidebarDocked: mql.matches,
+      sidebarOpen: false,
+      sidebarWidth: SIDEBAR_WIDTH,
+    };
+
+    this.mediaQueryChanged = this.mediaQueryChanged.bind(this);
+    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+  }
+
+  componentWillMount() {
+    mql.addListener(this.mediaQueryChanged);
+  }
+
+  componentWillUnmount() {
+    this.state.mql.removeListener(this.mediaQueryChanged);
+  }
+
+  onSetSidebarOpen(open) {
+    this.setState({
+      sidebarOpen: open,
+      sidebarWidth: SIDEBAR_WIDTH,
+    });
+  }
+
+  mediaQueryChanged() {
+    this.setState({
+      sidebarDocked: mql.matches,
+      sidebarOpen: false,
+      sidebarWidth: 0,
+    });
+  }
+
   render() {
     return (
       <div
@@ -46,23 +83,29 @@ class HomeScreen extends React.Component {
 
         <Sidebar
           sidebar={<SideBarContent />}
-          docked={true}
+          docked={this.state.sidebarDocked}
+          open={this.state.sidebarOpen}
           styles={{
             sidebar: {
               background: "#e6f1ff",
               color: "#303C55",
-              position: "fixed",
               padding: "10px",
               top: "80px",
               transition: "transform .3s ease-out",
               willChange: "transform",
               overflowY: "auto",
-              width: "300px",
+              width: SIDEBAR_WIDTH,
             },
           }}
         />
 
-        <Container style={{ marginTop: 80 }}>
+        <Container
+          style={{
+            padding: 30,
+            alignItems: "center",
+            marginTop: 80,
+          }}
+        >
           <AboutSection />
           <ProjectPage />
         </Container>

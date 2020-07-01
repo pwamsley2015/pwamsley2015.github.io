@@ -17,15 +17,17 @@ export default class SideBarContent extends React.Component {
         <Image src={SidebarImage} roundedCircle />
         <h3>{ABOUT.HEADLINE}</h3>
         {ABOUT.INTRO}
-        <p />I built this website with React. See the code{" "}
-        <a
-          href="https://github.com/pwamsley2015/pwamsley2015.github.io"
-          target="_blank"
-        >
-          here
-        </a>
-        .
-        <p />
+        <br />
+        <p>
+          I built this website with React. See the code{" "}
+          <a
+            href="https://github.com/pwamsley2015/pwamsley2015.github.io"
+            target="_blank"
+          >
+            here
+          </a>
+          .
+        </p>
         <p />
         <a href="https://www.github.com/pwamsley2015" target="_blank">
           <Image src={GithubIcon} />

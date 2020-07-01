@@ -13,8 +13,8 @@ const FRAMEWORKS = [
   "Spring",
   "JUnit",
   "React",
+  "Bootstrap",
   "Node",
-  "Maven",
 ];
 const TOOLS = [
   "Git & GitHub",

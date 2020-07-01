@@ -12,6 +12,9 @@ import SiteImg from "../images/site.png";
 import "../index.css";
 
 import Badge from "react-bootstrap/Badge";
+import Button from "react-bootstrap/Button";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 const PROJECTS = [
   {
     name: "Friday",
@@ -71,6 +74,14 @@ const PROJECTS = [
   },
 ];
 
+function renderTooltip(props) {
+  return (
+    <Tooltip id="code_tooltip" {...props}>
+      See the code...
+    </Tooltip>
+  );
+}
+
 export default class ProjectPage extends React.Component {
   render() {
     return (
@@ -88,7 +99,18 @@ export default class ProjectPage extends React.Component {
               <ProjectImg image={project.img} />
             </div>
             <div style={{ width: "100%" }}>
-              <h2 style={{ "text-align": "center" }}>{project.name}</h2>
+              <h2 style={{ "text-align": "center" }}>
+                {project.name}
+                <OverlayTrigger
+                  placement="right"
+                  delay={{ show: 50, hide: 400 }}
+                  overlay={renderTooltip}
+                >
+                  <a href={project.code} target="_blank">
+                    <span> &#8594;</span>
+                  </a>
+                </OverlayTrigger>
+              </h2>
               <div>{project.about}</div> <br />
               <div style={{ lineHeight: "50%" }}>
                 <b>Built with: </b>
