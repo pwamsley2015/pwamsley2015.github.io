@@ -89,6 +89,7 @@ class HomeScreen extends React.Component {
             sidebar: {
               background: "#e6f1ff",
               color: "#303C55",
+              position: "fixed",
               padding: "10px",
               top: "80px",
               transition: "transform .3s ease-out",

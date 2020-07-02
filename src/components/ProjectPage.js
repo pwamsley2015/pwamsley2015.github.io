@@ -98,7 +98,7 @@ export default class ProjectPage extends React.Component {
             <div style={{ marginRight: "20px" }}>
               <ProjectImg image={project.img} />
             </div>
-            <div style={{ width: "100%" }}>
+            <div style={{ width: "100%", zIndex: "1" }}>
               <h2 style={{ "text-align": "center" }}>
                 {project.name}
                 <OverlayTrigger
