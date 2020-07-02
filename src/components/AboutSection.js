@@ -33,13 +33,7 @@ export default class AboutSection extends React.Component {
         <Container style={{ margin: "15px" }}>
           <Row>
             <Col>
-              <h5
-                style={{
-                  textTransform: "uppercase",
-                }}
-              >
-                Languages
-              </h5>
+              <h5 className="headerText">Languages</h5>
               <ul>
                 {LANGS.map((lang, index) => (
                   <li>{lang}</li>
@@ -47,13 +41,7 @@ export default class AboutSection extends React.Component {
               </ul>
             </Col>
             <Col>
-              <h5
-                style={{
-                  textTransform: "uppercase",
-                }}
-              >
-                Frameworks
-              </h5>
+              <h5 className="headerText">Frameworks</h5>
               <ul>
                 {FRAMEWORKS.map((t, index) => (
                   <li>{t}</li>
@@ -61,13 +49,7 @@ export default class AboutSection extends React.Component {
               </ul>
             </Col>
             <Col>
-              <h5
-                style={{
-                  textTransform: "uppercase",
-                }}
-              >
-                Tools
-              </h5>
+              <h5 className="headerText">Tools</h5>
               <ul>
                 {TOOLS.map((tool, index) => (
                   <li>{tool}</li>
@@ -75,13 +57,7 @@ export default class AboutSection extends React.Component {
               </ul>
             </Col>
             <Col>
-              <h5
-                style={{
-                  textTransform: "uppercase",
-                }}
-              >
-                Education
-              </h5>
+              <h5 className="headerText">Education</h5>
               <h6>BS, Computer Science</h6>
               <br />
               <Image src={SbuImg} />

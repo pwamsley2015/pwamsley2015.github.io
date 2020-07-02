@@ -1,17 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import "react-animated-slider/build/horizontal.css";
-import { Col, Container, Row } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import ReactDOM from "react-dom";
-import Sidebar from "react-sidebar";
-import SbuImg from "./images/sbu.png";
+import AboutSection from "./components/AboutSection";
+import ProjectPage from "./components/ProjectPage";
+import SideBarContent from "./components/SideBarContent";
 import "./index.css";
 
-import ProjectPage from "./components/ProjectPage";
-import AboutSection from "./components/AboutSection";
-import SideBarContent from "./components/SideBarContent";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Scroll from "react-scroll";
 
 export const ABOUT = {
   INTRO:
@@ -76,46 +75,30 @@ class HomeScreen extends React.Component {
             <h1>Patrick Wamsley</h1>
           </Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="#projects">Projects</Nav.Link>
+            <Nav.Link
+              href="#project_page"
+              onSelect={() => {
+                let projectsPage = document.querySelector("#project_page");
+                projectsPage.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+                projectsPage.scrollTop -= 100;
+              }}
+            >
+              Projects
+            </Nav.Link>
             <Nav.Link href="resume.pdf">Resume PDF</Nav.Link>
           </Nav>
         </Navbar>
 
-        {/* <Sidebar
-          sidebar={<SideBarContent />}
-          docked={this.state.sidebarDocked}
-          open={this.state.sidebarOpen}
-          styles={{
-            sidebar: {
-              background: "#e6f1ff",
-              color: "#303C55",
-              position: "fixed",
-              padding: "10px",
-              top: "80px",
-              transition: "transform .3s ease-out",
-              willChange: "transform",
-              overflowY: "auto",
-              width: SIDEBAR_WIDTH,
-            },
-          }}
-        /> */}
-
         <div style={{ width: "100%" }}>
           <SideBarContent className="sidebar" />
-          <div
-            className="main"
-            style={
-              {
-                // padding: 30,
-                // alignItems: "center",
-                // marginTop: 80,
-                // marginRight: 50,
-                // position: "relative",
-              }
-            }
-          >
+          <div className="main">
             <AboutSection />
-            <ProjectPage />
+            <div id="project_page" className="scroll-with-offset">
+              <ProjectPage />
+            </div>
           </div>
         </div>
       </div>

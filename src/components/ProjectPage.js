@@ -85,50 +85,57 @@ function renderTooltip(props) {
 export default class ProjectPage extends React.Component {
   render() {
     return (
-      <div>
-        {PROJECTS.map((project, index) => (
-          <div
-            key={index}
-            style={{
-              display: "flex",
-              borderTop: "1px solid gray",
-              padding: "10px 0px",
-            }}
-          >
-            <div style={{ marginRight: "20px" }}>
-              <ProjectImg image={project.img} />
-            </div>
-            <div style={{ width: "100%", zIndex: "1" }}>
-              <h2 style={{ "text-align": "center" }}>
-                {project.name}
-                <OverlayTrigger
-                  placement="right"
-                  delay={{ show: 50, hide: 400 }}
-                  overlay={renderTooltip}
-                >
-                  <a href={project.code} target="_blank">
-                    <span> &#8594;</span>
-                  </a>
-                </OverlayTrigger>
-              </h2>
-              <div>{project.about}</div> <br />
-              <div style={{ lineHeight: "50%" }}>
-                <b>Built with: </b>
-                {project.built_with.map((tag, index) => (
-                  <Badge
-                    variant="secondary"
-                    style={{
-                      margin: "5px",
-                      fontSize: "larger",
-                    }}
+      <div className="project_page">
+        <div>
+          <h3 className="headerText" style={{ textAlign: "center" }}>
+            Projects
+          </h3>
+        </div>
+        <div>
+          {PROJECTS.map((project, index) => (
+            <div
+              key={index}
+              style={{
+                display: "flex",
+                borderTop: "1px solid gray",
+                padding: "10px 0px",
+              }}
+            >
+              <div style={{ marginRight: "20px" }}>
+                <ProjectImg image={project.img} />
+              </div>
+              <div style={{ width: "100%", zIndex: "1" }}>
+                <h2 style={{ "text-align": "center" }}>
+                  {project.name}
+                  <OverlayTrigger
+                    placement="right"
+                    delay={{ show: 50, hide: 400 }}
+                    overlay={renderTooltip}
                   >
-                    {tag}
-                  </Badge>
-                ))}
+                    <a href={project.code} target="_blank">
+                      <span> &#8594;</span>
+                    </a>
+                  </OverlayTrigger>
+                </h2>
+                <div>{project.about}</div> <br />
+                <div style={{ lineHeight: "50%" }}>
+                  <b>Built with: </b>
+                  {project.built_with.map((tag, index) => (
+                    <Badge
+                      variant="secondary"
+                      style={{
+                        margin: "5px",
+                        fontSize: "larger",
+                      }}
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     );
   }

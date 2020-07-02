@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Titillium Web", sans-serif;
@@ -8,6 +12,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 /*sidebar width == margin-left of main*/
@@ -37,6 +46,16 @@ code {
   margin: auto;
   max-width: 100%;
   width: 1500px;
+}
+
+.headerText {
+  text-transform: uppercase;
+  font-weight: 550;
+}
+
+.scroll-with-offset {
+  padding-top: 100px;
+  margin-bottom: -100px;
 }
 
 @media only screen and (min-width: 1280px) {
