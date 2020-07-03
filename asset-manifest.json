@@ -1,32 +1,31 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.9dd95663.chunk.css",
-    "main.js": "/portfolio/static/js/main.24a1529a.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.24a1529a.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.5cea8c1f.chunk.css",
+    "main.js": "/portfolio/static/js/main.7a541da5.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.7a541da5.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.f4f2abbf.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.f4f2abbf.js.map",
     "static/css/2.d6956de6.chunk.css": "/portfolio/static/css/2.d6956de6.chunk.css",
-    "static/js/2.4c503cf3.chunk.js": "/portfolio/static/js/2.4c503cf3.chunk.js",
-    "static/js/2.4c503cf3.chunk.js.map": "/portfolio/static/js/2.4c503cf3.chunk.js.map",
+    "static/js/2.4cf62bbd.chunk.js": "/portfolio/static/js/2.4cf62bbd.chunk.js",
+    "static/js/2.4cf62bbd.chunk.js.map": "/portfolio/static/js/2.4cf62bbd.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.24b10540c37222f17f7c79f398636886.js": "/portfolio/precache-manifest.24b10540c37222f17f7c79f398636886.js",
+    "precache-manifest.d9e1facc3b446c2244e0b73c9e629c21.js": "/portfolio/precache-manifest.d9e1facc3b446c2244e0b73c9e629c21.js",
     "service-worker.js": "/portfolio/service-worker.js",
     "static/css/2.d6956de6.chunk.css.map": "/portfolio/static/css/2.d6956de6.chunk.css.map",
-    "static/css/main.9dd95663.chunk.css.map": "/portfolio/static/css/main.9dd95663.chunk.css.map",
-    "static/js/2.4c503cf3.chunk.js.LICENSE.txt": "/portfolio/static/js/2.4c503cf3.chunk.js.LICENSE.txt",
+    "static/css/main.5cea8c1f.chunk.css.map": "/portfolio/static/css/main.5cea8c1f.chunk.css.map",
+    "static/js/2.4cf62bbd.chunk.js.LICENSE.txt": "/portfolio/static/js/2.4cf62bbd.chunk.js.LICENSE.txt",
     "static/media/frc.png": "/portfolio/static/media/frc.82b23c02.png",
     "static/media/friday.png": "/portfolio/static/media/friday.d2f543fd.png",
     "static/media/majmin.png": "/portfolio/static/media/majmin.3b1a1e65.png",
     "static/media/medcluster.png": "/portfolio/static/media/medcluster.f4d6fae2.png",
     "static/media/poker.jpg": "/portfolio/static/media/poker.f807a50a.jpg",
-    "static/media/sbu.png": "/portfolio/static/media/sbu.5c6066e6.png",
     "static/media/site.png": "/portfolio/static/media/site.2bf2d411.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f4f2abbf.js",
     "static/css/2.d6956de6.chunk.css",
-    "static/js/2.4c503cf3.chunk.js",
-    "static/css/main.9dd95663.chunk.css",
-    "static/js/main.24a1529a.chunk.js"
+    "static/js/2.4cf62bbd.chunk.js",
+    "static/css/main.5cea8c1f.chunk.css",
+    "static/js/main.7a541da5.chunk.js"
   ]
 }
