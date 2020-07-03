@@ -77,7 +77,7 @@ const PROJECTS = [
 function renderTooltip(props) {
   return (
     <Tooltip id="code_tooltip" {...props}>
-      See the code...
+      See the code
     </Tooltip>
   );
 }

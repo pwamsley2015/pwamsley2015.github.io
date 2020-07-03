@@ -2,8 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import "react-animated-slider/build/horizontal.css";
 import { Col, Container, Row } from "react-bootstrap";
-import Image from "react-bootstrap/Image";
-import SbuImg from "../images/sbu.png";
+
 import "../index.css";
 
 const LANGS = ["Java", "JavaScript", "C & C++", "Python", "SQL", "HTML & CSS"];
@@ -55,12 +54,6 @@ export default class AboutSection extends React.Component {
                   <li>{tool}</li>
                 ))}
               </ul>
-            </Col>
-            <Col>
-              <h5 className="headerText">Education</h5>
-              <h6>BS, Computer Science</h6>
-              <br />
-              <Image src={SbuImg} />
             </Col>
           </Row>
         </Container>
