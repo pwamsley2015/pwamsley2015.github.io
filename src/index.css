@@ -31,6 +31,8 @@ ul {
   background-color: #111;
   overflow-x: hidden;
   padding-top: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
   transition: width 0.3s ease-out;
   background: #e6f1ff;
   color: #303c55;
@@ -59,7 +61,7 @@ ul {
 }
 
 .sidebar_text {
-  font-size: large;
+  font-size: "100%";
 }
 
 @media only screen and (min-width: 1280px) {
