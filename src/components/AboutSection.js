@@ -13,7 +13,6 @@ const FRAMEWORKS = [
   "JUnit",
   "React",
   "Bootstrap",
-  "Node",
 ];
 const TOOLS = [
   "Git & GitHub",
