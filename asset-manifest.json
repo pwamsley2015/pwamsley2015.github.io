@@ -1,22 +1,24 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.165df2e7.chunk.css",
-    "main.js": "/portfolio/static/js/main.7b9c825f.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.7b9c825f.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.121f1e1d.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.121f1e1d.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.f4f2abbf.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.f4f2abbf.js.map",
     "static/css/2.d6956de6.chunk.css": "/portfolio/static/css/2.d6956de6.chunk.css",
-    "static/js/2.4cf62bbd.chunk.js": "/portfolio/static/js/2.4cf62bbd.chunk.js",
-    "static/js/2.4cf62bbd.chunk.js.map": "/portfolio/static/js/2.4cf62bbd.chunk.js.map",
+    "static/js/2.786b37f2.chunk.js": "/portfolio/static/js/2.786b37f2.chunk.js",
+    "static/js/2.786b37f2.chunk.js.map": "/portfolio/static/js/2.786b37f2.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.408a3eebda82a61f6435312ac4eb8849.js": "/portfolio/precache-manifest.408a3eebda82a61f6435312ac4eb8849.js",
+    "precache-manifest.bf3f0f276e781756ec596322522363cc.js": "/portfolio/precache-manifest.bf3f0f276e781756ec596322522363cc.js",
     "service-worker.js": "/portfolio/service-worker.js",
     "static/css/2.d6956de6.chunk.css.map": "/portfolio/static/css/2.d6956de6.chunk.css.map",
     "static/css/main.165df2e7.chunk.css.map": "/portfolio/static/css/main.165df2e7.chunk.css.map",
-    "static/js/2.4cf62bbd.chunk.js.LICENSE.txt": "/portfolio/static/js/2.4cf62bbd.chunk.js.LICENSE.txt",
+    "static/js/2.786b37f2.chunk.js.LICENSE.txt": "/portfolio/static/js/2.786b37f2.chunk.js.LICENSE.txt",
+    "static/media/DeadliftFace.jpg": "/portfolio/static/media/DeadliftFace.5d5a5136.jpg",
     "static/media/frc.png": "/portfolio/static/media/frc.82b23c02.png",
     "static/media/friday.png": "/portfolio/static/media/friday.d2f543fd.png",
     "static/media/majmin.png": "/portfolio/static/media/majmin.3b1a1e65.png",
+    "static/media/me.jpeg": "/portfolio/static/media/me.545454a6.jpeg",
     "static/media/medcluster.png": "/portfolio/static/media/medcluster.f4d6fae2.png",
     "static/media/poker.jpg": "/portfolio/static/media/poker.f807a50a.jpg",
     "static/media/site.png": "/portfolio/static/media/site.2bf2d411.png"
@@ -24,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.f4f2abbf.js",
     "static/css/2.d6956de6.chunk.css",
-    "static/js/2.4cf62bbd.chunk.js",
+    "static/js/2.786b37f2.chunk.js",
     "static/css/main.165df2e7.chunk.css",
-    "static/js/main.7b9c825f.chunk.js"
+    "static/js/main.121f1e1d.chunk.js"
   ]
 }
