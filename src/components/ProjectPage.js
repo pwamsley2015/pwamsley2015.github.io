@@ -9,6 +9,7 @@ import MajMinImg from "../images/majmin.png";
 import MedClusterImg from "../images/medcluster.png";
 import PokerImg from "../images/poker.jpg";
 import SiteImg from "../images/site.png";
+import DeadliftImg from "../images/DeadliftFace.jpg";
 import "../index.css";
 
 import Badge from "react-bootstrap/Badge";
@@ -24,6 +25,7 @@ const PROJECTS = [
       "My personal assistant chatbot which automates tasks, logs data, manages my schedule, and keeps me hacking. Dynamic IO over the web and local intranet via texts, shells and GUI widgets.",
     roles: ["Everything"],
     built_with: ["Twilio Messaging API", "Java", "Python", "Spark", "JavaFX"],
+    is_link: false,
   },
   {
     name: "Congressional Redistricting",
@@ -37,15 +39,27 @@ const PROJECTS = [
       "Implemented Graph Partioning Algorithm to generate majority-miniority distrcts",
     ],
     built_with: ["Angular", "TypeScript", "Java", "Hibernate"],
+    is_link: false,
   },
   {
-    name: "Personal Website",
+    name: "pwamsley2015.github.io/training",
+    img: DeadliftImg,
+    code: "https://github.com/pwamsley2015/personal_site_training",
+    about:
+      "A personal website for my powerlifting hobby, built with React-Springy-Paralax for elegant scroll animations.",
+    roles: ["Everything"],
+    built_with: ["React-Spring", "React", "JavaScript", "HTML", "CSS"],
+    is_link: true,
+  },
+  {
+    name: "pwamsley2015.github.io/portfolio",
     img: SiteImg,
     code: "https://github.com/pwamsley2015/pwamsley2015.github.io",
     about:
       "My personal portfolio website, which you've already seen! Built with react, this was a fun project to catch up on modern front end developement tools. More to come...",
     roles: ["Everything"],
     built_with: ["React", "Javascript", "HTML", "CSS"],
+    is_link: false,
   },
   {
     name: "MedCluster",
@@ -55,6 +69,7 @@ const PROJECTS = [
       "Machine Learning and Data Visualization tool used to optimize EMT base station locations.",
     roles: ["Backend Developer", "Implemented k-means clustering Algorithm"],
     built_with: ["Python", "Google Maps API", "JavaScript"],
+    is_link: false,
   },
   {
     name: "No Limit Hold'Em Equity Calculator",
@@ -63,6 +78,7 @@ const PROJECTS = [
     about: "Calculates Range vs Range Equity in Poker.",
     roles: ["Everything"],
     built_with: ["Java", "JUnit", "Monti-Carlo Estimation"],
+    is_link: false,
   },
   {
     name: "FRC 2485 Robotics",
@@ -71,6 +87,7 @@ const PROJECTS = [
     about: "Autonomous and Teleoperated Robot Control for FRC Recycle Rush",
     roles: ["Lead Developer"],
     built_with: ["Java", "WPI FRC Framework"],
+    is_link: false,
   },
 ];
 
@@ -106,7 +123,13 @@ export default class ProjectPage extends React.Component {
               </div>
               <div style={{ width: "100%", zIndex: "1" }}>
                 <h2 style={{ "text-align": "center" }}>
-                  {project.name}
+                  {project.is_link ? (
+                    <a href={project.name} target="_blank">
+                      {project.name}
+                    </a>
+                  ) : (
+                    project.name
+                  )}
                   <OverlayTrigger
                     placement="right"
                     delay={{ show: 50, hide: 400 }}

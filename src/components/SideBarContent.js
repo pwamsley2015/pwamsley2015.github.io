@@ -2,7 +2,7 @@ import React from "react";
 import Image from "react-bootstrap/Image";
 import GithubIcon from "../images/github.png";
 import InstaIcon from "../images/insta.png";
-import SidebarImage from "../images/logo192.png";
+import SidebarImage from "../images/me.jpeg";
 import LinkedInIcon from "../images/in.png";
 import { Container, Row, Col } from "react-bootstrap";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
@@ -33,7 +33,7 @@ export default class SideBarContent extends React.Component {
           "text-align": "center",
         }}
       >
-        <Image src={SidebarImage} roundedCircle />
+        <Image style={{ padding: "10px" }} src={SidebarImage} roundedCircle />
         <h3 style={{ lineHeight: "50%", marginBottom: "0" }}>
           {ABOUT.HEADLINE}{" "}
         </h3>
