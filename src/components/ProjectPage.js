@@ -24,7 +24,14 @@ const PROJECTS = [
     about:
       "My personal assistant chatbot which automates tasks, logs data, manages my schedule, and keeps me hacking. Dynamic IO over the web and local intranet via texts, shells and GUI widgets.",
     roles: ["Everything"],
-    built_with: ["Twilio Messaging API", "Java", "Python", "Spark", "JavaFX"],
+    built_with: [
+      "Twilio Messaging API",
+      "Google Firebase",
+      "Java",
+      "Python",
+      "Spark",
+      "JavaFX",
+    ],
     is_link: false,
   },
   {
@@ -46,9 +53,16 @@ const PROJECTS = [
     img: DeadliftImg,
     code: "https://github.com/pwamsley2015/personal_site_training",
     about:
-      "A personal website for my powerlifting hobby, built with React-Springy-Paralax for elegant scroll animations.",
+      "A personal website for my powerlifting hobby, built with React-Springy-Paralax for elegant scroll animations. Friday keeps the training log updated.",
     roles: ["Everything"],
-    built_with: ["React-Spring", "React", "JavaScript", "HTML", "CSS"],
+    built_with: [
+      "React-Spring",
+      "Google Firebase",
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS",
+    ],
     is_link: true,
   },
   {
