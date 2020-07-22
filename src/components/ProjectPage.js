@@ -138,7 +138,7 @@ export default class ProjectPage extends React.Component {
               <div style={{ width: "100%", zIndex: "1" }}>
                 <h2 style={{ "text-align": "center" }}>
                   {project.is_link ? (
-                    <a href={project.name} target="_blank">
+                    <a href={"https://" + project.name} target="_blank">
                       {project.name}
                     </a>
                   ) : (
