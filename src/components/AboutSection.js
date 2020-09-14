@@ -17,7 +17,7 @@ const FRAMEWORKS = [
 const TOOLS = [
   "Git & GitHub",
   "UML Diagrams",
-  "Maven",
+  "Maven & Gradle",
   "npm",
   "Eclipse & IntelliJ IDEA",
   "Excel & Google Sheets",

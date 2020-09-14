@@ -19,7 +19,7 @@ const ABOUT = {
   INSTA: "https://www.instagram.com/patrick_wamsley/",
   LINKED_IN: "https://www.linkedin.com/in/patrick-wamsley-32216b108/",
   PERSONAL:
-    "If I'm not at the keyboard or white board, I'm probably listening to music, cooking, or lifting weights... or listening to music while cooking in between sets of lifting... or playing chess.",
+    "If I'm not at the keyboard or white board, I'm probably listening to music, cooking, or lifting weights... or listening to music while cooking in between sets of lifting... or playing chess. Quarantine gets repetitive.",
   TITLE: "BS, Computer Science",
   SBU: "Stony Brook University",
 };

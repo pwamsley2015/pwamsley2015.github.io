@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import "react-animated-slider/build/horizontal.css";
-import { Col, Container, Row } from "react-bootstrap";
 import ProjectImg from "react-rounded-image";
 import FrcImg from "../images/frc.png";
 import FridayImg from "../images/friday.png";
@@ -33,13 +32,15 @@ const PROJECTS = [
       "JavaFX",
     ],
     is_link: false,
+    has_post: true,
+    route: "friday",
   },
   {
     name: "Congressional Redistricting",
     img: MajMinImg,
     code: "https://github.com/pwamsley2015/congressional_redistricting",
     about:
-      "Web application which generates congressional redistricting lines, built to maximize the number of majority-miniority distrcts.",
+      "Web application which generates congressional redistricting lines, built to maximize the number of majority-miniority distrcts and combat gerrymandering.",
     roles: [
       "Primary Backend Developer",
       "Designed and implemented AlogrithmStep framework to modularize Alogrithm",
@@ -47,6 +48,8 @@ const PROJECTS = [
     ],
     built_with: ["Angular", "TypeScript", "Java", "Hibernate"],
     is_link: false,
+    has_post: true,
+    route: "congressionalredistricting",
   },
   {
     name: "pwamsley2015.github.io/training",
@@ -64,6 +67,7 @@ const PROJECTS = [
       "CSS",
     ],
     is_link: true,
+    has_post: false,
   },
   {
     name: "pwamsley2015.github.io/portfolio",
@@ -84,6 +88,7 @@ const PROJECTS = [
     roles: ["Backend Developer", "Implemented k-means clustering Algorithm"],
     built_with: ["Python", "Google Maps API", "JavaScript"],
     is_link: false,
+    has_post: false,
   },
   {
     name: "No Limit Hold'Em Equity Calculator",
@@ -93,6 +98,7 @@ const PROJECTS = [
     roles: ["Everything"],
     built_with: ["Java", "JUnit", "Monti-Carlo Estimation"],
     is_link: false,
+    has_post: false,
   },
   {
     name: "FRC 2485 Robotics",
@@ -102,6 +108,7 @@ const PROJECTS = [
     roles: ["Lead Developer"],
     built_with: ["Java", "WPI FRC Framework"],
     is_link: false,
+    has_post: false,
   },
 ];
 
@@ -154,7 +161,28 @@ export default class ProjectPage extends React.Component {
                     </a>
                   </OverlayTrigger>
                 </h2>
-                <div>{project.about}</div> <br />
+                <div>
+                  {project.about}
+                  {"  "}
+                  {project.has_post ? (
+                    <Button
+                      style={{
+                        paddingLeft: "4px",
+                        paddingRight: "2px",
+                        paddingTop: "1px",
+                        paddingBottom: "1px",
+                        fontSize: "smaller",
+                      }}
+                      variant="secondary"
+                      href={`/${project.route}`}
+                    >
+                      See more &#8594;
+                    </Button>
+                  ) : (
+                    <a />
+                  )}
+                </div>
+                <br />
                 <div style={{ lineHeight: "50%" }}>
                   <b>Built with: </b>
                   {project.built_with.map((tag, index) => (

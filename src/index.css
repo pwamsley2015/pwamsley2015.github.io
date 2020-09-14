@@ -38,6 +38,33 @@ ul {
   color: #303c55;
 }
 
+.project_side {
+  height: 100%;
+  width: 400px;
+  max-width: 400px;
+  position: fixed;
+  display: block;
+  background-color: #111;
+  background: #e6f1ff;
+  color: #303c55;
+}
+
+.centered {
+  margin: auto;
+  padding: 10px;
+}
+
+.sb_img {
+  background: #1b3d50;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
 .main {
   /* padding-left: 0; Same as the width of the sidenav */
   padding: 100px 40px;
@@ -48,6 +75,20 @@ ul {
   margin: auto;
   max-width: 100%;
   width: 1500px;
+}
+
+.blog_area {
+  align-items: center;
+  position: relative;
+  /* width: 1500px; */
+  padding: 20px;
+}
+
+.markdown {
+  font-size: 140%;
+  text-align: justify;
+  justify-content: center;
+  padding: 45px;
 }
 
 .headerText {
