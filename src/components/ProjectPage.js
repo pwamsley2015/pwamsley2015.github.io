@@ -70,13 +70,13 @@ const PROJECTS = [
     has_post: false,
   },
   {
-    name: "pwamsley2015.github.io/portfolio",
+    name: "pwamsley.com",
     img: SiteImg,
     code: "https://github.com/pwamsley2015/pwamsley2015.github.io",
     about:
       "My personal portfolio website, which you've already seen! Built with react, this was a fun project to catch up on modern front end developement tools. More to come...",
     roles: ["Everything"],
-    built_with: ["React", "Javascript", "HTML", "CSS"],
+    built_with: ["React", "React-Router", "Javascript", "HTML", "CSS"],
     is_link: false,
   },
   {
