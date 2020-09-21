@@ -15,6 +15,7 @@ import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import ProjectBlock from "./ProjectBlock";
 const PROJECTS = [
   {
     name: "Friday",
@@ -131,74 +132,17 @@ export default class ProjectPage extends React.Component {
         </div>
         <div>
           {PROJECTS.map((project, index) => (
-            <div
-              key={index}
-              style={{
-                display: "flex",
-                borderTop: "1px solid gray",
-                padding: "10px 0px",
-              }}
-            >
-              <div style={{ marginRight: "20px" }}>
-                <ProjectImg image={project.img} />
-              </div>
-              <div style={{ width: "100%", zIndex: "1" }}>
-                <h2 style={{ "text-align": "center" }}>
-                  {project.is_link ? (
-                    <a href={"https://" + project.name} target="_blank">
-                      {project.name}
-                    </a>
-                  ) : (
-                    project.name
-                  )}
-                  <OverlayTrigger
-                    placement="right"
-                    delay={{ show: 50, hide: 400 }}
-                    overlay={renderTooltip}
-                  >
-                    <a href={project.code} target="_blank">
-                      <span> &#8594;</span>
-                    </a>
-                  </OverlayTrigger>
-                </h2>
-                <div>
-                  {project.about}
-                  {"  "}
-                  {project.has_post ? (
-                    <Button
-                      style={{
-                        paddingLeft: "4px",
-                        paddingRight: "2px",
-                        paddingTop: "1px",
-                        paddingBottom: "1px",
-                        fontSize: "smaller",
-                      }}
-                      variant="secondary"
-                      href={`/${project.route}`}
-                    >
-                      See more &#8594;
-                    </Button>
-                  ) : (
-                    <a />
-                  )}
-                </div>
-                <br />
-                <div style={{ lineHeight: "50%" }}>
-                  <b>Built with: </b>
-                  {project.built_with.map((tag, index) => (
-                    <Badge
-                      variant="secondary"
-                      style={{
-                        margin: "5px",
-                        fontSize: "larger",
-                      }}
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <ProjectBlock
+              name={project.name}
+              img={project.img}
+              code={project.code}
+              about={project.about}
+              roles={project.roles}
+              built_with={project.built_with}
+              is_link={project.build_with}
+              has_post={project.has_post}
+              route={project.route}
+            />
           ))}
         </div>
       </div>

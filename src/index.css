@@ -39,14 +39,19 @@ ul {
 }
 
 .project_side {
-  height: 100%;
-  width: 400px;
-  max-width: 400px;
+  height: 300px;
+  width: 100%;
   position: fixed;
-  display: block;
+  display: flex;
+  flex-direction: row;
   background-color: #111;
   background: #e6f1ff;
   color: #303c55;
+}
+
+.ps_about {
+  width: 350px;
+  padding: 10px;
 }
 
 .centered {
